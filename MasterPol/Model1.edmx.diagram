@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb0a2a781a6647fa9c2a590ad8c9c9cb" Name="Diagram1">
+        <EntityTypeShape EntityType="MasterPolModel.Материал" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPolModel.Партнер" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPolModel.ПродуктыПартнера" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPolModel.Продукция" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPolModel.ТипМатериала" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPolModel.ТипПартнера" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MasterPolModel.ТипПродукции" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="MasterPolModel.FK_Материал_ТипМатериала1" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPolModel.FK_Партнер_ТипПартнера" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPolModel.FK_ПродуктыПартнера_Партнер" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPolModel.FK_ПродуктыПартнера_Продукция" ManuallyRouted="false" />
+        <AssociationConnector Association="MasterPolModel.FK_Продукция_ТипПродукции" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,67 @@
+﻿<Window x:Class="MasterPol.AddEditPartnerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterPol"
+        mc:Ignorable="d"
+        Title="AddEditPartnerWindow" Height="450" Width="400"
+        FontFamily="Comic Sans MS"
+        FontSize="14">
+    <Grid Margin="20,20,25,20" Background="#FFBBDCFA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Тип партнера:" Margin="0,0,0,5"/>
+        <ComboBox Grid.Row="1" x:Name="TypeComboBox" SelectedValuePath="Key" DisplayMemberPath="Value" 
+                  SelectedValue="{Binding PartnerType}" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="2" Text="Наименование компании:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="3" x:Name="NameTextBox" Text="{Binding PartnerName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="4" Text="ФИО директора:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="5" x:Name="DirectorTextBox" Text="{Binding Director, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="6" Text="Юридический адрес:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="7" x:Name="AddressTextBox" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                <TextBlock Text="Телефон:" Margin="0,0,0,5"/>
+                <TextBox x:Name="PhoneTextBox" Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                <TextBlock Text="Email:" Margin="0,0,0,5"/>
+                <TextBox x:Name="EmailTextBox" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Рейтинг (0–10):" Margin="0,0,0,5"/>
+                <TextBox x:Name="RatingTextBox" Text="{Binding Rating, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button x:Name="SaveButton" Content="Сохранить" Click="SaveButton_Click" 
+                    Width="100" Height="30" Background="#FF0C4882" Foreground="White" FontWeight="Bold"/>
+            <Button x:Name="CancelButton" Content="Отмена" Click="CancelButton_Click" 
+                    Width="100" Height="30" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
